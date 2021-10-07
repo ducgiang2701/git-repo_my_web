@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cta {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #2D2D2D;
+    padding: 20px 50px;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.section-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+#nav-bar {
+    width: 100%;
+    position: fixed;
+    height: auto;
+    position: fixed;
+    z-index: 100;
+}
+#nav-bar .nav-bar {
+    background-color: black;
+    left: 0;
+    top: 0;
+    padding: 1rem 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-bar .brand {
+    font-family: 'Satisfy', cursive;
+    font-size: 3rem;
+    color: white;
+}
+.nav-bar .nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-bar .nav-list .hamburger {
+    height: auto;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    transition: .3s ease transform;
+    cursor: pointer;
+}
+.nav-bar .nav-list .hamburger .bar {
+    height: 2px;
+    width: 30px;
+    background-color: white;
+    position: relative;
+    display: flex;
+}
+.nav-bar .nav-list .hamburger.close {
+    transform: rotate(360deg);
+}
+.nav-bar .nav-list .hamburger.close .bar::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.nav-bar .nav-list .hamburger.close .bar::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.nav-bar .nav-list .hamburger.close .bar {
+    background-color: transparent;
+}
+.nav-bar .nav-list .hamburger .bar::before,
+.nav-bar .nav-list .hamburger .bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transition: .3s ease all;
+}
+.nav-bar .nav-list .hamburger .bar::before {
+    top:8px;
+}
+.nav-bar .nav-list .hamburger .bar::after {
+    bottom: 8px;
+}
+.nav-bar .nav-list ul {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0px;
+    background-color: rgb(110, 109, 109);
+    padding: 5rem 0;
+    transform: translateY(-100%);
+    transition: .3s ease transform;
+    text-align: center;
+    z-index: -1;
+}
+.nav-bar .nav-list ul li{
+    list-style: none;
+    display: block;
+    position: relative;
+    padding: 2rem 0;
+}
+.nav-bar .nav-list ul li:hover::after {
+    transform: translateX(-50%) scale(1);
+}
+.nav-bar .nav-list ul li::after {
+    content: '';
+    position: absolute;
+    width: 5rem;
+    height: .2rem;
+    background-color: white;
+    left: 50;
+    transform: translateX(-50%) scale(0);
+    bottom: 0;
+    transition: .3s ease transform;
+}
+.nav-bar .nav-list ul li a {
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    display: block;
+    letter-spacing: .15rem;
+    padding: 0 3rem;
+}
+.nav-bar .nav-list.open ul {
+    transform: translateY(0);
+}
+
+/* section hero */
+#hero .hero{
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    background-color:black;
+    color: white;
+}
+#hero .hero .hero-box h1{
+    font-size: 5rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+#hero .hero .hero-box h3 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+#hero .hero .hero-img {
+    width: 100%;
+    height: auto;
+}
+#hero .hero .hero-img img {
+    height: auto;
+    width: 100%;
+}
+/* End Section hero */
+/* about section */
+#about {
+    padding: 100px 0;
+}
+#about  .about{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    flex-direction: column;
+}
+#about  .about .about-top {
+    text-align: center;
+}
+#about  .about .about-top .cta {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #737373;
+}
+
+#about  .about .about-top p {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #191919;
+}
+#about  .about .about-bottom {
+    margin-top: 100px;
+    width: 400px;
+    height: auto;
+    position: relative;
+}
+#about  .about .about-bottom::after {
+    content: '';
+    position: absolute;
+    background-color: #DCDCDC;
+    right: -5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+    height: 120%;
+    z-index: -1;
+}
+#about  .about .about-bottom .about-img img{
+    width: 100%;
+    height: 100%;
+}
+/* end about section */
+/* service section */
+#service {
+    padding: 100px 0px;
+}
+#service .service {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    flex-direction: column;
+}
+#service .service .service-top {
+    text-align: center;
+}
+#service  .service .service-top p {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #191919;
+}
+#service  .service .service-bottom {
+    margin-top: 50px;
+}
+.flip-card{
+    width: 400px;
+    height: 300px;
+    margin-top: 10px;
+    perspective: 1000px;
+    background-color: transparent;
+}
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    transition: transform .3s;
+    transform-style: preserve-3d;
+    position: relative;
+    
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.flip-card-front {
+    font-size: 2rem;
+}
+.flip-card-front .service-img {
+    width: 100%;
+    height: 100%; 
+    position: relative;
+    backface-visibility: hidden;
+}
+.service-text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: white;
+}
+.service-icon {
+    font-size: 50px;
+}
+.flip-card-front .service-img img {
+    height: 100%;
+    width: 100%;
+}
+.flip-card-back {
+    font-size: 1.5rem;
+    transform: rotateY(180deg);
+}
+.flip-card-back h1 {
+    font-size: 3rem;
+}
+.flip-card-back p {
+    margin-top: 20px;
+}
+/* end service section */
+
+/* hire section */
+#hire .hire {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    flex-direction: column;
+    background-color: #ccc;
+}
+#hire .hire h1 {
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+#hire .hire .cta {
+    padding: 20px 30px;
+    margin-top: 10px;
+    background-color: #939393;
+    font-size: 1.7rem;
+    transition: all .3s;
+}
+#hire .hire .cta:hover {
+    background-color: black;
+}
+/* end hire section */
+/* section footer */
+#footer .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    flex-direction: column;
+    background-color: black;
+    padding: 70px 0;
+}
+#footer .footer h1 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.9rem;
+}
+#footer .footer h3 {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+#footer .footer .footer-follow h2{
+    color: white;
+    text-align: center;
+    margin: 20px 0px 5px 0px;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+#footer .footer .footer-follow-social {
+    display: flex;
+}
+#footer .footer .footer-follow-social .footer-icon {
+    margin: 0px 10px;
+}
+#footer .footer .footer-follow-social .footer-icon a i {
+    font-size: 3rem;
+    color: white;
+}
+/* end section footer */
+/* media query  */
+/* media for tablet */
+@media only screen and (min-width:768px) {
+    /* header nav-bar */
+    #nav-bar .nav-list .hamburger {
+        display: none;
+    }
+    #nav-bar .nav-list ul {
+        position: initial;
+        transform: translateY(0);
+        padding: 0;
+        z-index: initial;
+        background-color: initial;
+        display: flex;
+        width: 100%;
+    } 
+    #nav-bar .nav-list ul li {
+        display: inline-block;
+
+    }
+    /* End header nav-bar */
+    /* hero section */
+    #hero .hero .hero-box-container{
+        max-width: 1200px;
+        padding: 0 50px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    #hero .hero {   
+        margin:0 auto;        
+        min-height: 100vh;
+        flex-direction:row-reverse ;
+        padding: 0 50px;
+    }
+    #hero .hero .hero-box {
+        text-align: left;
+    }
+    #hero .hero .hero-box h3 {
+        font-size: 1.3rem;
+    }
+    /* End hero section */
+    /* about */
+    #about .about {
+        flex-direction: row;
+    }
+    #about .about .about-top {
+        width: 50%;
+        padding-right: 17rem;
+    }
+    #about .about .about-top h1,
+    #about .about .about-top p {
+        text-align: left;
+    }
+    /* End about */
+    /* service */
+    #service .service .service-top p{
+        width: 500px;
+    }
+    #service .service .service-bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    /* End service */
+}
+/* media for desktop */
+@media only screen and (min-width: 1200px) {
+    /* hire */
+    #hero .hero .hero-box-container{
+        max-width: 1400px;
+        padding: 0 50px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    #hire .hire {
+        min-width: 100%;
+        padding: 30px 0;
+    }
+    /* End hire */
+    /* footer */
+    #footer .footer {
+        min-width: 100%;
+    }
+    /* End footer */
+}
+/* End media for desktop */
+/* end media query  */
+
